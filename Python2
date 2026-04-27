@@ -1,0 +1,50 @@
+def reg(name, age):
+  print(f'Пользователь {name} с возрастом {age} зарегистрирован!')
+
+def imt_child(weight, height):
+  print('Запущена детская программа')
+  imt = weight / (height ** 2)
+  if imt <= 15.1:
+    print('Дефицит массы')
+    imt = -1
+  elif 15.2 <= imt <= 22:
+    print('Нормальный вес')
+    imt = 0
+  else:
+    print('Лишний вес')
+    imt = 1
+  return imt
+
+def desired_result(weight, imt):
+  desired_weight = int(input())
+  if desired_weight > weight and imt == -1:
+    print(f'Наберем {desired_weight - weight} кг')
+  elif desired_weight < weight and imt == 1:
+    print(f'Похудеем на {abs(desired_weight - weight)} кг')
+  else:
+    print('Рекомендую программу для улучшения тела с небольшим изменением веса')
+
+def imt_v(weight, height):
+  print('Запущена взрослая программа')
+  imt = weight / (height ** 2)
+  if imt <= 18.4:
+    print('Дефицит массы')
+    imt = -1
+  elif 18.5 <= imt <= 25:
+    print('Нормальный вес')
+    imt = 0
+  else:
+    print('Лишний вес')
+    imt = 1
+  return imt
+
+name = input()
+age = int(input())
+reg(name, age)
+weight = int(input())
+height = int(input()) / 100
+if age >= 18:
+  imt = imt_v(weight, height)
+else:
+  imt = imt_child(weight, height)
+desired_result(weight, imt)
