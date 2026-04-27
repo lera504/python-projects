@@ -82,4 +82,3 @@ while True:
       anagramm()
   elif answer == 3:
     break
-(Объясни кратко о чем этот код
