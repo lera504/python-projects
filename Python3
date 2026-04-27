@@ -1,0 +1,38 @@
+while True:
+  print('Привет! Выбери интересную тему на сегодня!')
+  print('1 - Поговорим. 2 - Список игр новинок за 2026. 3 - Загадка')
+  print('Напиши stop, если нужен перерыв')
+  answer=input()
+  if answer=='stop':
+    print('Пока')
+    break
+
+  elif answer=='1':
+    print('Привет. Поделись своими мыслями.')
+    answer_talk=input()
+    print('Понял. Пиши, если еще захочешь поговорить.')
+
+  elif answer=="2":
+    print('Держи горячие новинки за 2026')
+    print('1 - GTA 26', '2 - Wolverine 2026', '3 - HALF LIFE 3', sep='\t')
+    print('Выбери нужную')
+    answer_game=int(input())
+    if 1<=answer_game<=3:
+      print('Отличный выбор')
+    else:
+      print('Нужно выбрать из списка')
+
+  elif answer=="3":
+    print('Загадка дня')
+    print("В Полотняной стране",'По реке Простыне',"Плывет пароход","То назад, то вперед,","А за ним такая гладь —","Ни морщинки не видать",sep='\n')
+    counts=1
+    while True:
+      answer_riddle=input()
+      if answer_riddle=='утюг':
+        print(f'Молодец! Ты угадал с {counts} попытки.')
+        break
+      print('Подумай еще')
+      counts+=1
+
+  else:
+    print('Пока тебя не понял. Напиши еще раз')
